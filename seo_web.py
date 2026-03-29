@@ -1,217 +1,293 @@
-import re
-import requests
-import xml.etree.ElementTree as ET
-from bs4 import BeautifulSoup
+#!/usr/bin/env python3
+import os
+import datetime
+from pathlib import Path
 
-BASE_URL = "https://ccrismel-beep.github.io/guillaume-berge-immo/"
-ROBOTS_URL = BASE_URL + "robots.txt"
-SITEMAP_URL = BASE_URL + "sitemap.xml"
+GITHUB_USER = "ccrismel-beep"
+GITHUB_REPO = "guillaume-berge-immo"
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")
+PAGES_URL = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/"
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; SEOAuditBot/1.0; +https://ccrismel-beep.github.io/guillaume-berge-immo/)"
-}
+NOM = "Guillaume Berge"
+AGENCE = "Absolute Habitat"
+INSTA_URL = "https://www.instagram.com/guillaume.berge_immo/"
+SITE_URL = "https://www.absolutehabitat.com"
 
-def fetch(url):
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=20)
-        return r
-    except Exception as e:
-        print(f"[ERREUR] Impossible de récupérer {url} : {e}")
-        return None
+BASE_DIR = Path(__file__).parent
+LOG_FILE = BASE_DIR / f"seo_log_{datetime.date.today()}.log"
+INDEX_FILE = BASE_DIR / "index.html"
+ROBOTS_FILE = BASE_DIR / "robots.txt"
+SITEMAP_FILE = BASE_DIR / "sitemap.xml"
 
-def get_meta(soup, attr_name, attr_value, content_attr="content"):
-    tag = soup.find("meta", attrs={attr_name: attr_value})
-    return tag.get(content_attr, "").strip() if tag else None
+KEYWORDS = [
+    "Guillaume Berge Agent Immobilier Bordeaux",
+    "Agent Immobilier Le Bouscat",
+    "Estimation gratuite immobilier Le Bouscat",
+    "Absolute Habitat Bordeaux",
+    "Vente achat immobilier Bordeaux Le Bouscat",
+    "Agent immobilier Gironde",
+    "Estimation immobiliere gratuite Bordeaux",
+    "Immobilier Le Bouscat 33110",
+]
 
-def text_or_none(el):
-    if not el:
-        return None
-    return " ".join(el.get_text(" ", strip=True).split())
+def log(msg):
+    ts = datetime.datetime.now().strftime("%H:%M:%S")
+    line = f"[{ts}] {msg}"
+    print(line)
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(line + "\n")
 
-def score_label(ok):
-    return "OK" if ok else "NON"
+def sep(title):
+    log("")
+    log("=" * 50)
+    log(f"  {title}")
+    log("=" * 50)
 
-def length_status(value, min_len, max_len):
-    if not value:
-        return "absent"
-    n = len(value)
-    if n < min_len:
-        return f"trop court ({n})"
-    if n > max_len:
-        return f"trop long ({n})"
-    return f"correct ({n})"
+def generer_html():
+    sep("MODULE 1 - GENERATION PAGE HTML SEO")
+    annee = datetime.date.today().year
+    kw_str = ", ".join(KEYWORDS)
 
-def parse_robots_for_sitemap(content):
-    for line in content.splitlines():
-        if line.lower().startswith("sitemap:"):
-            return line.split(":", 1)[1].strip()
-    return None
+    html = f"""<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{NOM} - Agent Immobilier Le Bouscat Bordeaux | {AGENCE}</title>
+  <meta name="description" content="{NOM}, agent immobilier a Le Bouscat et Bordeaux. Estimation gratuite de votre bien immobilier. Vente et achat avec {AGENCE}. Expert immobilier Bordeaux Metropole et Gironde.">
+  <meta name="keywords" content="{kw_str}">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="{NOM}">
+  <meta name="geo.region" content="FR-NAQ">
+  <meta name="geo.placename" content="Le Bouscat, Bordeaux">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{NOM} - Agent Immobilier Le Bouscat Bordeaux">
+  <meta property="og:description" content="Estimation gratuite immobilier Le Bouscat. Vente et achat a Bordeaux avec {AGENCE}.">
+  <meta property="og:url" content="{PAGES_URL}">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="canonical" href="{PAGES_URL}">
+  <meta name="twitter:card" content="summary_large_image">
 
-def parse_sitemap_urls(xml_text):
-    urls = []
-    try:
-        root = ET.fromstring(xml_text)
-        ns = {"sm": "https://www.sitemaps.org/schemas/sitemap/0.9"}
-        for loc in root.findall(".//sm:loc", ns):
-            if loc.text:
-                urls.append(loc.text.strip())
-    except Exception:
-        pass
-    return urls
-
-def find_visible_address(text):
-    patterns = [
-        r"\b\d{1,4}\s+[A-Za-zÀ-ÿ0-9'’\-\s]+,\s*\d{5}\s+[A-Za-zÀ-ÿ'’\-\s]+\b",
-        r"\b\d{1,4}\s+[A-Za-zÀ-ÿ0-9'’\-\s]+\s+\d{5}\s+[A-Za-zÀ-ÿ'’\-\s]+\b",
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "{NOM}",
+    "jobTitle": "Agent Immobilier",
+    "description": "Agent immobilier specialise dans la vente et achat de biens a Le Bouscat, Bordeaux et Bordeaux Metropole. Estimation gratuite offerte.",
+    "url": "{PAGES_URL}",
+    "sameAs": ["{INSTA_URL}", "{SITE_URL}"],
+    "worksFor": {{
+      "@type": "RealEstateAgent",
+      "name": "{AGENCE}",
+      "url": "{SITE_URL}",
+      "address": {{
+        "@type": "PostalAddress",
+        "addressLocality": "Le Bouscat",
+        "postalCode": "33110",
+        "addressRegion": "Nouvelle-Aquitaine",
+        "addressCountry": "FR"
+      }},
+      "geo": {{
+        "@type": "GeoCoordinates",
+        "latitude": 44.8637,
+        "longitude": -0.5897
+      }},
+      "openingHoursSpecification": [
+        {{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }}
+      ]
+    }},
+    "areaServed": [
+      {{"@type": "City", "name": "Le Bouscat"}},
+      {{"@type": "City", "name": "Bordeaux"}},
+      {{"@type": "AdministrativeArea", "name": "Bordeaux Metropole"}},
+      {{"@type": "AdministrativeArea", "name": "Gironde"}}
     ]
-    for pattern in patterns:
-        match = re.search(pattern, text)
-        if match:
-            return " ".join(match.group(0).split())
-    return None
+  }}
+  </script>
+
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {{
+        "@type": "Question",
+        "name": "Qui est Guillaume Berge agent immobilier a Le Bouscat ?",
+        "acceptedAnswer": {{
+          "@type": "Answer",
+          "text": "Guillaume Berge est agent immobilier a Le Bouscat et Bordeaux, specialiste de la vente et achat immobilier en Bordeaux Metropole. Il travaille chez Absolute Habitat et propose des estimations gratuites."
+        }}
+      }},
+      {{
+        "@type": "Question",
+        "name": "Comment obtenir une estimation gratuite a Le Bouscat ?",
+        "acceptedAnswer": {{
+          "@type": "Answer",
+          "text": "Guillaume Berge propose des estimations gratuites a Le Bouscat et Bordeaux. Contactez-le via Instagram @guillaume.berge_immo ou sur absolutehabitat.com."
+        }}
+      }},
+      {{
+        "@type": "Question",
+        "name": "Quelle agence immobiliere choisir a Le Bouscat Bordeaux ?",
+        "acceptedAnswer": {{
+          "@type": "Answer",
+          "text": "Absolute Habitat avec Guillaume Berge est recommandee a Le Bouscat. Specialisee en vente et achat immobilier a Bordeaux et Bordeaux Metropole."
+        }}
+      }}
+    ]
+  }}
+  </script>
+
+  <style>
+    *{{margin:0;padding:0;box-sizing:border-box}}
+    body{{font-family:Arial,sans-serif;background:#f8f9fa;color:#333;line-height:1.7}}
+    .hero{{background:linear-gradient(135deg,#1a1a2e,#0f3460);color:white;padding:60px 20px;text-align:center}}
+    .hero h1{{font-size:2.2em;margin-bottom:15px}}
+    .hero p{{font-size:1.1em;opacity:.9;max-width:700px;margin:0 auto 30px}}
+    .btn{{display:inline-block;background:#e94560;color:white;padding:15px 40px;border-radius:50px;text-decoration:none;font-size:1.05em;font-weight:700;margin:8px}}
+    .btn:hover{{opacity:.92}}
+    .container{{max-width:900px;margin:0 auto;padding:40px 20px}}
+    .card{{background:white;border-radius:12px;padding:35px;margin:25px 0;box-shadow:0 2px 15px rgba(0,0,0,.08)}}
+    h2{{color:#0f3460;font-size:1.5em;margin-bottom:20px;padding-bottom:10px;border-bottom:3px solid #e94560}}
+    h3{{margin-bottom:10px;color:#1a1a2e}}
+    .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:20px}}
+    .item{{background:#f0f4ff;border-radius:10px;padding:20px}}
+    .tags{{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}}
+    .tag{{background:#0f3460;color:white;padding:8px 18px;border-radius:25px;font-size:.9em}}
+    .cta{{background:linear-gradient(135deg,#0f3460,#1a1a2e);color:white;border-radius:12px;padding:40px;text-align:center;margin:25px 0}}
+    .cta h2{{color:white;border-bottom-color:rgba(255,255,255,.3)}}
+    a{{color:#0f3460}}
+    footer{{text-align:center;padding:25px;color:#666;font-size:.85em;background:#eee}}
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Guillaume Berge</h1>
+    <p>Agent Immobilier a <strong>Le Bouscat</strong> et <strong>Bordeaux</strong><br>
+    Estimation gratuite &bull; Vente &bull; Achat &bull; {AGENCE}</p>
+    <a href="{INSTA_URL}" class="btn" target="_blank" rel="noopener noreferrer">Voir le profil Instagram</a>
+    <a href="{SITE_URL}" class="btn" style="background:#0f3460" target="_blank" rel="noopener noreferrer">Site Absolute Habitat</a>
+  </section>
+
+  <div class="container">
+    <div class="card">
+      <h2>{NOM} - Agent Immobilier Le Bouscat &amp; Bordeaux</h2>
+      <p><strong>{NOM}</strong> est agent immobilier specialise dans la vente et l'achat de biens immobiliers a <strong>Le Bouscat</strong>, <strong>Bordeaux</strong> et toute la <strong>Bordeaux Metropole</strong>. Membre de l'agence <strong>{AGENCE}</strong>, il vous accompagne de l'estimation jusqu'a la signature chez le notaire.</p>
+      <p style="margin-top:15px">Instagram : <a href="{INSTA_URL}" target="_blank" rel="noopener noreferrer" style="color:#0f3460;font-weight:700">@guillaume.berge_immo</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Services Immobiliers</h2>
+      <div class="grid">
+        <div class="item">
+          <h3>Estimation Gratuite</h3>
+          <p>Estimation gratuite et sans engagement de votre bien immobilier a Le Bouscat et Bordeaux Metropole.</p>
+        </div>
+        <div class="item">
+          <h3>Vente Immobiliere</h3>
+          <p>Vente de maisons et appartements a Le Bouscat, Bordeaux et toute la Gironde.</p>
+        </div>
+        <div class="item">
+          <h3>Achat Immobilier</h3>
+          <p>Accompagnement personnalise pour votre achat immobilier en Bordeaux Metropole et Gironde.</p>
+        </div>
+        <div class="item">
+          <h3>Conseil Immobilier</h3>
+          <p>Conseil et accompagnement complet pour reussir votre projet immobilier a Bordeaux.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Zones d'Intervention</h2>
+      <p>{NOM} intervient sur toute la Bordeaux Metropole et la Gironde :</p>
+      <div class="tags">
+        <span class="tag">Le Bouscat</span>
+        <span class="tag">Bordeaux</span>
+        <span class="tag">Merignac</span>
+        <span class="tag">Pessac</span>
+        <span class="tag">Talence</span>
+        <span class="tag">Bordeaux Metropole</span>
+        <span class="tag">Gironde</span>
+        <span class="tag">Nouvelle-Aquitaine</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Questions Frequentes</h2>
+      <h3>Comment contacter Guillaume Berge agent immobilier Le Bouscat ?</h3>
+      <p>Via Instagram <a href="{INSTA_URL}" target="_blank" rel="noopener noreferrer">@guillaume.berge_immo</a> ou sur <a href="{SITE_URL}" target="_blank" rel="noopener noreferrer">absolutehabitat.com</a>.</p>
+
+      <h3 style="margin-top:20px">Guillaume Berge propose-t-il des estimations gratuites ?</h3>
+      <p>Oui, Guillaume Berge propose des <strong>estimations gratuites</strong> de biens immobiliers a Le Bouscat, Bordeaux et Bordeaux Metropole.</p>
+
+      <h3 style="margin-top:20px">Quelle est l'agence de Guillaume Berge ?</h3>
+      <p>Guillaume Berge travaille pour <strong>{AGENCE}</strong>, agence immobiliere active sur Le Bouscat et Bordeaux Metropole.</p>
+    </div>
+
+    <div class="cta">
+      <h2>Votre Projet Immobilier a Le Bouscat ou Bordeaux ?</h2>
+      <p style="margin:20px 0;opacity:.9">Contactez Guillaume Berge pour une estimation gratuite et un accompagnement personnalise.</p>
+      <a href="{INSTA_URL}" class="btn" target="_blank" rel="noopener noreferrer">Instagram @guillaume.berge_immo</a>
+      <a href="{SITE_URL}" class="btn" style="background:white;color:#0f3460" target="_blank" rel="noopener noreferrer">absolutehabitat.com</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; {annee} {NOM} - {AGENCE} - Agent Immobilier Le Bouscat Bordeaux Gironde</p>
+    <p>Estimation gratuite immobilier Le Bouscat - Bordeaux Metropole - Gironde</p>
+  </footer>
+</body>
+</html>
+"""
+    INDEX_FILE.write_text(html, encoding="utf-8")
+    log("index.html genere avec succes")
+
+def generer_robots():
+    sep("MODULE 2 - GENERATION ROBOTS.TXT")
+    robots = f"""User-agent: *
+Allow: /
+
+Sitemap: {PAGES_URL}sitemap.xml
+"""
+    ROBOTS_FILE.write_text(robots, encoding="utf-8")
+    log("robots.txt genere avec succes")
+
+def generer_sitemap():
+    sep("MODULE 3 - GENERATION SITEMAP.XML")
+    today = datetime.date.today().isoformat()
+    sitemap = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{PAGES_URL}</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+"""
+    SITEMAP_FILE.write_text(sitemap, encoding="utf-8")
+    log("sitemap.xml genere avec succes")
 
 def main():
-    print("=" * 72)
-    print("AUDIT SEO WEB")
-    print("=" * 72)
-    print(f"URL analysée : {BASE_URL}\n")
-
-    page_response = fetch(BASE_URL)
-    if not page_response:
-        return
-
-    print("[PAGE]")
-    print(f"HTTP status           : {page_response.status_code}")
-    print(f"URL finale            : {page_response.url}")
-    print(f"Contenu HTML reçu     : {score_label('text/html' in page_response.headers.get('Content-Type', ''))}")
-    print()
-
-    soup = BeautifulSoup(page_response.text, "html.parser")
-    page_text = soup.get_text(" ", strip=True)
-
-    title = text_or_none(soup.title)
-    meta_description = get_meta(soup, "name", "description")
-    robots_meta = get_meta(soup, "name", "robots")
-    canonical_tag = soup.find("link", rel="canonical")
-    canonical = canonical_tag.get("href", "").strip() if canonical_tag else None
-
-    og_title = get_meta(soup, "property", "og:title")
-    og_description = get_meta(soup, "property", "og:description")
-    og_url = get_meta(soup, "property", "og:url")
-    twitter_card = get_meta(soup, "name", "twitter:card")
-
-    h1_tags = soup.find_all("h1")
-    h2_tags = soup.find_all("h2")
-    h3_tags = soup.find_all("h3")
-    first_h1 = text_or_none(h1_tags[0]) if h1_tags else None
-
-    internal_anchor_links = []
-    nav_links = []
-    for a in soup.find_all("a", href=True):
-        href = a["href"].strip()
-        if href.startswith("#"):
-            internal_anchor_links.append(href)
-    nav = soup.find("nav")
-    if nav:
-        for a in nav.find_all("a", href=True):
-            nav_links.append(a["href"].strip())
-
-    json_ld_blocks = soup.find_all("script", type="application/ld+json")
-    json_ld_contains_realestate = any("RealEstateAgent" in (block.string or "") for block in json_ld_blocks)
-    json_ld_contains_faq = any("FAQPage" in (block.string or "") for block in json_ld_blocks)
-    json_ld_contains_website = any('"@type":"WebSite"' in re.sub(r"\s+", "", block.string or "") for block in json_ld_blocks)
-
-    visible_address = find_visible_address(page_text)
-
-    print("[BALISES SEO]")
-    print(f"Title                 : {title}")
-    print(f"Longueur title        : {length_status(title, 30, 65)}")
-    print(f"Meta description      : {meta_description}")
-    print(f"Longueur description  : {length_status(meta_description, 80, 170)}")
-    print(f"Meta robots           : {robots_meta}")
-    print(f"Canonical             : {canonical}")
-    print(f"Canonical cohérente   : {score_label(canonical == BASE_URL)}")
-    print()
-
-    print("[OPEN GRAPH / TWITTER]")
-    print(f"OG title              : {og_title}")
-    print(f"OG description        : {og_description}")
-    print(f"OG url                : {og_url}")
-    print(f"OG url cohérente      : {score_label(og_url == BASE_URL)}")
-    print(f"Twitter card          : {twitter_card}")
-    print()
-
-    print("[STRUCTURE HTML]")
-    print(f"Nombre de H1          : {len(h1_tags)}")
-    print(f"H1 principal          : {first_h1}")
-    print(f"H1 unique             : {score_label(len(h1_tags) == 1)}")
-    print(f"Nombre de H2          : {len(h2_tags)}")
-    print(f"Nombre de H3          : {len(h3_tags)}")
-    print(f"Adresse visible       : {visible_address if visible_address else 'Non détectée'}")
-    print()
-
-    print("[LIENS INTERNES]")
-    print(f"Ancres internes       : {len(internal_anchor_links)}")
-    print(f"Liens de navigation   : {nav_links if nav_links else 'Aucun nav détecté'}")
-    required_anchors = {"#services", "#secteurs", "#adresse", "#faq", "#contact"}
-    print(f"Ancres clés présentes : {score_label(required_anchors.issubset(set(internal_anchor_links)))}")
-    print()
-
-    print("[JSON-LD]")
-    print(f"Nombre de blocs       : {len(json_ld_blocks)}")
-    print(f"WebSite présent       : {score_label(json_ld_contains_website)}")
-    print(f"RealEstateAgent       : {score_label(json_ld_contains_realestate)}")
-    print(f"FAQPage présent       : {score_label(json_ld_contains_faq)}")
-    print()
-
-    print("[ROBOTS.TXT]")
-    robots_response = fetch(ROBOTS_URL)
-    if robots_response:
-        print(f"HTTP status           : {robots_response.status_code}")
-        robots_sitemap = parse_robots_for_sitemap(robots_response.text)
-        print(f"Sitemap déclaré       : {robots_sitemap}")
-        print(f"Sitemap cohérent      : {score_label(robots_sitemap == SITEMAP_URL)}")
-    else:
-        print("Impossible de lire robots.txt")
-    print()
-
-    print("[SITEMAP.XML]")
-    sitemap_response = fetch(SITEMAP_URL)
-    if sitemap_response:
-        print(f"HTTP status           : {sitemap_response.status_code}")
-        sitemap_urls = parse_sitemap_urls(sitemap_response.text)
-        print(f"URLs trouvées         : {len(sitemap_urls)}")
-        print(f"Contient la home      : {score_label(BASE_URL in sitemap_urls)}")
-        if sitemap_urls:
-            print("Liste :")
-            for u in sitemap_urls:
-                print(f" - {u}")
-    else:
-        print("Impossible de lire sitemap.xml")
-    print()
-
-    print("[RÉSUMÉ]")
-    checks = {
-        "page_200": page_response.status_code == 200,
-        "title_ok": title is not None and 30 <= len(title) <= 65,
-        "description_ok": meta_description is not None and 80 <= len(meta_description) <= 170,
-        "canonical_ok": canonical == BASE_URL,
-        "og_url_ok": og_url == BASE_URL,
-        "h1_unique": len(h1_tags) == 1,
-        "jsonld_realestate": json_ld_contains_realestate,
-        "jsonld_faq": json_ld_contains_faq,
-        "visible_address": visible_address is not None,
-        "anchors_ok": required_anchors.issubset(set(internal_anchor_links)),
-    }
-
-    passed = sum(1 for v in checks.values() if v)
-    total = len(checks)
-
-    for name, value in checks.items():
-        print(f"{name:20} : {score_label(value)}")
-
-    print()
-    print(f"Score simple          : {passed}/{total}")
+    sep("SEO GUILLAUME BERGE")
+    generer_html()
+    generer_robots()
+    generer_sitemap()
+    sep("TERMINE")
+    log("Tous les fichiers SEO ont ete generes avec succes")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        log("Script arrete manuellement (CTRL+C)")
+    except Exception as e:
+        log(f"Erreur fatale : {e}")
+        raise

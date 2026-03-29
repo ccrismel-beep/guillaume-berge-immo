@@ -1,0 +1,4 @@
+cron_seo.log
+seo_log_*.log
+seo_web_backup.py
+seo_web_broken_*.py
