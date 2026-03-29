@@ -1,701 +1,526 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Primaire -->
-  <title>Guillaume Berge – Agent Immobilier Le Bouscat & Bordeaux | Absolute Habitat</title>
-  <meta name="description" content="Guillaume Berge, agent immobilier spécialisé dans la vente et l'achat sur Le Bouscat, Bordeaux et Bordeaux Métropole. Estimation gratuite et sans engagement. Agence Absolute Habitat.">
-  <meta name="keywords" content="Guillaume Berge, agent immobilier Le Bouscat, agent immobilier Bordeaux, estimation gratuite Le Bouscat, vente immobilier Bordeaux, Absolute Habitat, immobilier Bordeaux Métropole, achat vente maison Le Bouscat">
-  <meta name="author" content="Guillaume Berge – Absolute Habitat">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://guillaume-berge-immo.fr/">
+  <title>Guillaume Berge – Agent immobilier au Bouscat & Bordeaux Métropole</title>
+  <meta name="description" content="Guillaume Berge, agent immobilier au Bouscat et sur Bordeaux Métropole. Estimation gratuite, vente, achat et accompagnement immobilier avec Absolute Habitat." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Guillaume Berge" />
+  <meta name="theme-color" content="#0f172a" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://guillaume-berge-immo.fr/">
-  <meta property="og:title" content="Guillaume Berge – Agent Immobilier Le Bouscat & Bordeaux">
-  <meta property="og:description" content="Estimation gratuite et sans engagement. Vente, achat, estimation immobilière sur Le Bouscat, Bordeaux et Bordeaux Métropole. Contactez Guillaume Berge – Absolute Habitat.">
-  <meta property="og:image" content="https://absolutehabitat.com/og-image.jpg">
-  <meta property="og:locale" content="fr_FR">
+  <link rel="canonical" href="https://ccrismel-beep.github.io/guillaume-berge-immo/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://ccrismel-beep.github.io/guillaume-berge-immo/sitemap.xml" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Guillaume Berge – Agent Immobilier Le Bouscat & Bordeaux">
-  <meta name="twitter:description" content="Estimation gratuite et sans engagement. Vente, achat sur Le Bouscat, Bordeaux et Bordeaux Métropole. Absolute Habitat.">
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Guillaume Berge – Agent immobilier au Bouscat & Bordeaux Métropole" />
+  <meta property="og:description" content="Estimation gratuite, vente, achat et accompagnement immobilier au Bouscat, Bordeaux et Bordeaux Métropole." />
+  <meta property="og:url" content="https://ccrismel-beep.github.io/guillaume-berge-immo/" />
+  <meta property="og:site_name" content="Guillaume Berge Immobilier" />
 
-  <!-- JSON-LD Structured Data – Person (Agent Immobilier) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Guillaume Berge",
-    "jobTitle": "Agent Immobilier",
-    "description": "Guillaume Berge est agent immobilier spécialisé dans la vente et l'achat de biens immobiliers sur Le Bouscat, Bordeaux et Bordeaux Métropole. Membre de l'agence Absolute Habitat, il accompagne ses clients de l'estimation jusqu'à la signature chez le notaire.",
-    "telephone": "+33782423074",
-    "email": "g.berge@absolutehabitat.com",
-    "url": "https://absolutehabitat.com",
-    "sameAs": [
-      "https://www.instagram.com/guillaume.berge_immo/"
-    ],
-    "worksFor": {
-      "@type": "RealEstateAgent",
-      "name": "Absolute Habitat",
-      "url": "https://absolutehabitat.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Le Bouscat",
-        "addressRegion": "Nouvelle-Aquitaine",
-        "addressCountry": "FR"
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guillaume Berge – Agent immobilier au Bouscat & Bordeaux Métropole" />
+  <meta name="twitter:description" content="Estimation gratuite, vente, achat et accompagnement immobilier au Bouscat, Bordeaux et Bordeaux Métropole." />
+
+  <meta name="geo.region" content="FR-33" />
+  <meta name="geo.placename" content="Le Bouscat" />
+  <meta name="geo.position" content="44.8653;-0.5995" />
+  <meta name="ICBM" content="44.8653, -0.5995" />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --accent: #0f172a;
+      --max: 1120px;
+      --radius: 18px;
+      --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(to bottom, #f8fafc, #eef2ff 35%, #f8fafc);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(248, 250, 252, 0.86);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 76px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.96rem;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 72px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(15, 118, 110, 0.08);
+      border: 1px solid rgba(15, 118, 110, 0.12);
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+    h3 { font-size: 1.12rem; }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--accent);
+      border-color: var(--line);
+    }
+
+    .hero-side {
+      padding: 24px;
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .mini-panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      background: #fff;
+    }
+
+    .mini-panel strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .section {
+      padding: 30px 0 24px;
+    }
+
+    .section-head {
+      margin-bottom: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      padding: 24px;
+    }
+
+    .service p:last-child,
+    .mini-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .local-box,
+    .faq-item,
+    .contact-box {
+      padding: 26px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .address {
+      font-style: normal;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .note {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 42px 0 64px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-box {
+      padding: 24px;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .grid-3,
+      .split {
+        grid-template-columns: 1fr;
       }
-    },
-    "areaServed": [
-      {"@type": "City", "name": "Le Bouscat"},
-      {"@type": "City", "name": "Bordeaux"},
-      {"@type": "City", "name": "Mérignac"},
-      {"@type": "City", "name": "Pessac"},
-      {"@type": "City", "name": "Eysines"},
-      {"@type": "City", "name": "Bruges"},
-      {"@type": "City", "name": "Caudéran"},
-      {"@type": "AdministrativeArea", "name": "Bordeaux Métropole"},
-      {"@type": "AdministrativeArea", "name": "Gironde"},
-      {"@type": "AdministrativeArea", "name": "Nouvelle-Aquitaine"}
+
+      .topbar-inner {
+        align-items: flex-start;
+        padding: 14px 0;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      .hero-copy,
+      .hero-side,
+      .service,
+      .local-box,
+      .faq-item,
+      .contact-box,
+      .footer-box {
+        padding: 22px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Guillaume Berge Immobilier",
+    "url":"https://ccrismel-beep.github.io/guillaume-berge-immo/"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"RealEstateAgent",
+    "name":"Guillaume Berge",
+    "url":"https://ccrismel-beep.github.io/guillaume-berge-immo/",
+    "image":"https://ccrismel-beep.github.io/guillaume-berge-immo/",
+    "description":"Agent immobilier au Bouscat et sur Bordeaux Métropole. Estimation gratuite, vente, achat et accompagnement immobilier.",
+    "areaServed":[
+      {"@type":"City","name":"Le Bouscat"},
+      {"@type":"City","name":"Bordeaux"},
+      {"@type":"AdministrativeArea","name":"Bordeaux Métropole"}
     ],
-    "knowsAbout": ["Estimation immobilière", "Vente immobilière", "Achat immobilier", "Maison Le Bouscat", "Appartement Bordeaux"]
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"12 Place Gambetta",
+      "addressLocality":"Le Bouscat",
+      "postalCode":"33110",
+      "addressCountry":"FR"
+    }
   }
   </script>
 
-  <!-- JSON-LD – RealEstateAgent (Agence) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Absolute Habitat – Guillaume Berge",
-    "description": "Agence immobilière Absolute Habitat, spécialisée sur Bordeaux Métropole. Guillaume Berge vous accompagne pour vendre, acheter ou estimer votre bien immobilier sur Le Bouscat et Bordeaux.",
-    "telephone": "+33782423074",
-    "email": "g.berge@absolutehabitat.com",
-    "url": "https://absolutehabitat.com",
-    "sameAs": ["https://www.instagram.com/guillaume.berge_immo/"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Le Bouscat",
-      "addressRegion": "Gironde",
-      "postalCode": "33110",
-      "addressCountry": "FR"
-    },
-    "areaServed": "Bordeaux Métropole",
-    "priceRange": "€€",
-    "hasMap": "https://maps.google.com/?q=Le+Bouscat+33110"
-  }
-  </script>
-
-  <!-- JSON-LD – FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
       {
-        "@type": "Question",
-        "name": "Comment contacter Guillaume Berge agent immobilier Le Bouscat ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Via Instagram @guillaume.berge_immo ou sur absolutehabitat.com. Tél : 07.82.42.30.74 – Email : g.berge@absolutehabitat.com"
+        "@type":"Question",
+        "name":"Dans quels secteurs Guillaume Berge intervient-il ?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Guillaume Berge accompagne les projets immobiliers au Bouscat, à Bordeaux et sur Bordeaux Métropole."
         }
       },
       {
-        "@type": "Question",
-        "name": "Guillaume Berge propose-t-il des estimations gratuites ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, Guillaume Berge propose des estimations gratuites et sans engagement de biens immobiliers sur Le Bouscat, Bordeaux et Bordeaux Métropole."
+        "@type":"Question",
+        "name":"Proposez-vous une estimation immobilière gratuite ?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Oui, une estimation immobilière gratuite et sans engagement est proposée pour les vendeurs qui souhaitent connaître la valeur de leur bien."
         }
       },
       {
-        "@type": "Question",
-        "name": "Quelle est l'agence de Guillaume Berge ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Guillaume Berge travaille pour Absolute Habitat, agence immobilière sur Le Bouscat, spécialisée sur Bordeaux Métropole."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Dans quelles zones Guillaume Berge intervient-il ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Guillaume Berge intervient sur Le Bouscat, Bordeaux, Mérignac, Pessac, Eysines, Bruges, Caudéran, Bordeaux Métropole, la Gironde (33) et la Nouvelle-Aquitaine."
+        "@type":"Question",
+        "name":"Où se situe l'adresse de référence affichée sur le site ?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"L'adresse de référence affichée sur ce site est située au 12 Place Gambetta, 33110 Le Bouscat. Elle doit correspondre à l'adresse réelle utilisée pour la communication locale."
         }
       }
     ]
   }
   </script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-
-  <style>
-    /* Art direction: agent immobilier haut de gamme Bordeaux
-       Palette: beige chaud, accent bordeaux/prune, or doux
-       Typography: Cormorant Garamond (display prestige) + Satoshi (corps/UI)
-       Density: spacieux, aéré, confiance */
-
-    :root, [data-theme="light"] {
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'Satoshi', 'DM Sans', sans-serif;
-
-      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
-      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
-      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
-      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
-      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
-      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
-      --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
-
-      --space-1:  0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
-      --space-4:  1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
-      --space-8:  2rem;    --space-10: 2.5rem; --space-12: 3rem;
-      --space-16: 4rem;    --space-20: 5rem;   --space-24: 6rem;
-
-      --color-bg:             #f8f5f0;
-      --color-surface:        #faf8f4;
-      --color-surface-2:      #fdfcfa;
-      --color-surface-offset: #f2ede5;
-      --color-divider:        #e2dbd0;
-      --color-border:         #d8d0c4;
-
-      --color-text:           #2a2218;
-      --color-text-muted:     #7a7060;
-      --color-text-faint:     #b8b0a2;
-      --color-text-inverse:   #faf8f4;
-
-      /* Accent bordeaux/prune (immobilier prestige) */
-      --color-primary:        #7b2d42;
-      --color-primary-hover:  #5e1f30;
-      --color-primary-active: #43131f;
-      --color-primary-highlight: #e8d4d8;
-
-      /* Accent or doux */
-      --color-gold:           #c49a3c;
-      --color-gold-light:     #f0e4c2;
-
-      --radius-sm: 0.375rem;
-      --radius-md: 0.5rem;
-      --radius-lg: 0.75rem;
-      --radius-xl: 1rem;
-      --radius-full: 9999px;
-
-      --shadow-sm: 0 1px 3px oklch(0.2 0.02 30 / 0.07);
-      --shadow-md: 0 4px 16px oklch(0.2 0.02 30 / 0.09);
-      --shadow-lg: 0 12px 40px oklch(0.2 0.02 30 / 0.12);
-
-      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-
-      --content-narrow: 640px;
-      --content-default: 960px;
-      --content-wide: 1200px;
-    }
-
-    [data-theme="dark"] {
-      --color-bg:             #181410;
-      --color-surface:        #1e1a16;
-      --color-surface-2:      #231f1b;
-      --color-surface-offset: #1b1713;
-      --color-divider:        #2e2922;
-      --color-border:         #3a342c;
-      --color-text:           #d4cec5;
-      --color-text-muted:     #7a7068;
-      --color-text-faint:     #52483e;
-      --color-text-inverse:   #1e1a16;
-      --color-primary:        #c47080;
-      --color-primary-hover:  #b05568;
-      --color-primary-active: #953848;
-      --color-primary-highlight: #3d2028;
-      --color-gold:           #d4a84a;
-      --color-gold-light:     #3a3020;
-      --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.3);
-      --shadow-md: 0 4px 16px oklch(0 0 0 / 0.4);
-      --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.5);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme]) {
-        --color-bg: #181410; --color-surface: #1e1a16; --color-surface-2: #231f1b;
-        --color-surface-offset: #1b1713; --color-divider: #2e2922; --color-border: #3a342c;
-        --color-text: #d4cec5; --color-text-muted: #7a7068; --color-text-faint: #52483e;
-        --color-text-inverse: #1e1a16; --color-primary: #c47080; --color-primary-hover: #b05568;
-        --color-primary-active: #953848; --color-primary-highlight: #3d2028;
-        --color-gold: #d4a84a; --color-gold-light: #3a3020;
-      }
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: var(--space-16); }
-    body { min-height: 100dvh; line-height: 1.6; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background-color: var(--color-bg); }
-    img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
-    ul[role="list"], ol[role="list"] { list-style: none; }
-    input, button, textarea, select { font: inherit; color: inherit; }
-    h1, h2, h3, h4 { text-wrap: balance; line-height: 1.15; }
-    p, li { text-wrap: pretty; }
-    button { cursor: pointer; background: none; border: none; }
-    a, button, [role="button"] { transition: color var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition); }
-    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
-
-    /* ── Layout ── */
-    .container { max-width: var(--content-default); margin-inline: auto; padding-inline: var(--space-6); }
-    .container-wide { max-width: var(--content-wide); margin-inline: auto; padding-inline: var(--space-6); }
-    .container-narrow { max-width: var(--content-narrow); margin-inline: auto; padding-inline: var(--space-6); }
-
-    /* ── Navigation ── */
-    .nav { position: sticky; top: 0; z-index: 100; background: var(--color-surface); border-bottom: 1px solid oklch(from var(--color-text) l c h / 0.08); backdrop-filter: blur(8px); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-6); max-width: var(--content-wide); margin-inline: auto; }
-    .nav-logo { display: flex; flex-direction: column; gap: 0.1em; text-decoration: none; color: var(--color-text); }
-    .nav-logo-name { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 500; letter-spacing: 0.01em; }
-    .nav-logo-sub { font-size: var(--text-xs); color: var(--color-text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
-    .nav-links { display: flex; align-items: center; gap: var(--space-6); list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--color-text-muted); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.02em; }
-    .nav-links a:hover { color: var(--color-primary); }
-    .nav-cta { background: var(--color-primary); color: var(--color-text-inverse) !important; padding: var(--space-2) var(--space-5); border-radius: var(--radius-full); font-weight: 500; }
-    .nav-cta:hover { background: var(--color-primary-hover) !important; color: var(--color-text-inverse) !important; }
-    .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
-    .theme-toggle { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: var(--radius-full); color: var(--color-text-muted); border: 1px solid var(--color-border); }
-    .theme-toggle:hover { color: var(--color-text); border-color: var(--color-primary); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; padding: var(--space-2); }
-    .hamburger span { width: 22px; height: 2px; background: var(--color-text); border-radius: 2px; transition: transform var(--transition), opacity var(--transition); }
-
-    /* ── Hero ── */
-    .hero { padding-block: clamp(var(--space-16), 10vw, var(--space-24)); background: var(--color-bg); position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, oklch(from var(--color-gold) l c h / 0.07), transparent 70%); pointer-events: none; }
-    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); margin-bottom: var(--space-5); }
-    .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); }
-    .hero-title { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 400; line-height: 1.1; margin-bottom: var(--space-6); }
-    .hero-title em { font-style: italic; color: var(--color-primary); }
-    .hero-desc { color: var(--color-text-muted); font-size: var(--text-base); line-height: 1.7; max-width: 52ch; margin-bottom: var(--space-8); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-4); }
-    .btn-primary { display: inline-flex; align-items: center; gap: var(--space-2); background: var(--color-primary); color: var(--color-text-inverse); padding: var(--space-3) var(--space-8); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500; text-decoration: none; letter-spacing: 0.02em; }
-    .btn-primary:hover { background: var(--color-primary-hover); color: var(--color-text-inverse); }
-    .btn-outline { display: inline-flex; align-items: center; gap: var(--space-2); border: 1px solid var(--color-border); color: var(--color-text); padding: var(--space-3) var(--space-8); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500; text-decoration: none; }
-    .btn-outline:hover { border-color: var(--color-primary); color: var(--color-primary); }
-    .hero-card { background: var(--color-surface); border: 1px solid oklch(from var(--color-text) l c h / 0.08); border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-lg); position: relative; }
-    .hero-card-badge { position: absolute; top: var(--space-4); right: var(--space-4); background: var(--color-gold-light); color: var(--color-gold); font-size: var(--text-xs); font-weight: 500; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); }
-    .hero-card-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--color-primary-highlight); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4); font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-primary); }
-    .hero-card-name { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 500; margin-bottom: var(--space-1); }
-    .hero-card-role { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6); }
-    .hero-card-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin-bottom: var(--space-6); }
-    .hero-stat { text-align: center; padding: var(--space-3); background: var(--color-bg); border-radius: var(--radius-md); }
-    .hero-stat-num { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 600; color: var(--color-primary); }
-    .hero-stat-label { font-size: var(--text-xs); color: var(--color-text-muted); }
-    .hero-card-contact { display: flex; flex-direction: column; gap: var(--space-2); }
-    .contact-item { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--color-text-muted); }
-    .contact-item a { color: var(--color-primary); text-decoration: none; }
-    .contact-item a:hover { color: var(--color-primary-hover); text-decoration: underline; }
-
-    /* ── Zones ── */
-    .section { padding-block: clamp(var(--space-12), 7vw, var(--space-20)); }
-    .section-label { font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); margin-bottom: var(--space-3); }
-    .section-title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 400; margin-bottom: var(--space-6); }
-    .section-desc { color: var(--color-text-muted); font-size: var(--text-base); max-width: 60ch; margin-bottom: var(--space-10); line-height: 1.7; }
-    .divider { border: none; border-top: 1px solid var(--color-divider); }
-
-    /* Services */
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
-    .service-card { background: var(--color-surface); border: 1px solid oklch(from var(--color-text) l c h / 0.07); border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-sm); transition: box-shadow var(--transition), transform var(--transition); }
-    .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .service-icon { width: 44px; height: 44px; margin-bottom: var(--space-4); color: var(--color-primary); }
-    .service-title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 500; margin-bottom: var(--space-2); }
-    .service-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
-
-    /* Zones d'intervention */
-    .zones-section { background: var(--color-surface-offset); }
-    .zones-grid { display: flex; flex-wrap: wrap; gap: var(--space-3); }
-    .zone-tag { display: inline-flex; align-items: center; gap: var(--space-2); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-full); padding: var(--space-2) var(--space-5); font-size: var(--text-sm); font-weight: 500; color: var(--color-text); }
-    .zone-tag-primary { background: var(--color-primary-highlight); border-color: oklch(from var(--color-primary) l c h / 0.25); color: var(--color-primary); font-weight: 600; }
-    .zone-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-
-    /* FAQ */
-    .faq-list { display: flex; flex-direction: column; gap: var(--space-2); }
-    .faq-item { background: var(--color-surface); border: 1px solid oklch(from var(--color-text) l c h / 0.07); border-radius: var(--radius-lg); overflow: hidden; }
-    .faq-question { display: flex; justify-content: space-between; align-items: center; padding: var(--space-5) var(--space-6); font-size: var(--text-base); font-weight: 500; cursor: pointer; color: var(--color-text); }
-    .faq-question:hover { color: var(--color-primary); }
-    .faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--color-text-muted); transition: transform var(--transition); }
-    .faq-item.open .faq-icon { transform: rotate(45deg); color: var(--color-primary); }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s; }
-    .faq-item.open .faq-answer { max-height: 200px; }
-    .faq-answer-inner { padding: 0 var(--space-6) var(--space-5); color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.7; }
-
-    /* CTA Banner */
-    .cta-banner { background: var(--color-primary); padding-block: clamp(var(--space-10), 5vw, var(--space-16)); }
-    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-8); flex-wrap: wrap; }
-    .cta-title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 400; color: var(--color-text-inverse); }
-    .cta-desc { color: oklch(from var(--color-text-inverse) l c h / 0.75); font-size: var(--text-base); margin-top: var(--space-2); }
-    .btn-gold { display: inline-flex; align-items: center; gap: var(--space-2); background: var(--color-gold); color: #1a1000; padding: var(--space-3) var(--space-8); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600; text-decoration: none; white-space: nowrap; }
-    .btn-gold:hover { background: oklch(from var(--color-gold) calc(l - 0.06) c h); color: #1a1000; }
-
-    /* Instagram CTA */
-    .insta-section { padding-block: clamp(var(--space-10), 5vw, var(--space-16)); }
-    .insta-card { display: flex; align-items: center; gap: var(--space-8); background: var(--color-surface); border: 1px solid oklch(from var(--color-text) l c h / 0.07); border-radius: var(--radius-xl); padding: var(--space-8) var(--space-10); box-shadow: var(--shadow-md); }
-    .insta-icon { flex-shrink: 0; }
-    .insta-title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 500; margin-bottom: var(--space-2); }
-    .insta-desc { color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.7; max-width: 50ch; }
-    .insta-handle { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--color-primary); font-weight: 500; text-decoration: none; margin-top: var(--space-3); font-size: var(--text-sm); }
-    .insta-handle:hover { color: var(--color-primary-hover); text-decoration: underline; }
-
-    /* Footer */
-    .footer { background: var(--color-surface-offset); border-top: 1px solid var(--color-divider); padding-block: var(--space-10); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-8); margin-bottom: var(--space-8); }
-    .footer-brand-name { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 500; margin-bottom: var(--space-2); }
-    .footer-brand-desc { font-size: var(--text-sm); color: var(--color-text-muted); max-width: 38ch; line-height: 1.7; }
-    .footer-title { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-4); }
-    .footer-links { display: flex; flex-direction: column; gap: var(--space-2); list-style: none; }
-    .footer-links a { color: var(--color-text-muted); text-decoration: none; font-size: var(--text-sm); }
-    .footer-links a:hover { color: var(--color-primary); }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); padding-top: var(--space-6); border-top: 1px solid var(--color-divider); }
-    .footer-copy { font-size: var(--text-xs); color: var(--color-text-faint); }
-
-    /* Mobile nav */
-    @media (max-width: 768px) {
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--color-surface); border-bottom: 1px solid var(--color-divider); padding: var(--space-4) var(--space-6); gap: var(--space-4); }
-      .nav-links.open { display: flex; }
-      .hamburger { display: flex; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
-      .services-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .insta-card { flex-direction: column; text-align: center; }
-      .cta-inner { flex-direction: column; text-align: center; }
-    }
-    @media (max-width: 600px) {
-      .hero-card-stats { grid-template-columns: repeat(3, 1fr); }
-      .nav-actions .theme-toggle { display: none; }
-    }
-  </style>
 </head>
 <body>
-
-  <!-- Skip link accessibilité -->
-  <a href="#main" class="sr-only">Aller au contenu principal</a>
-
-  <!-- ── Navigation ── -->
-  <nav class="nav" role="navigation" aria-label="Navigation principale">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Guillaume Berge Agent Immobilier">
-        <!-- Logo SVG -->
-        <svg width="140" height="38" viewBox="0 0 140 38" fill="none" aria-hidden="true">
-          <rect x="0" y="8" width="22" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M5 30 L11 17 L17 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="11" cy="12" r="2" fill="currentColor"/>
-          <text x="30" y="23" font-family="Cormorant Garamond, Georgia, serif" font-size="17" font-weight="500" fill="currentColor">Guillaume Berge</text>
-          <text x="30" y="34" font-family="Satoshi, DM Sans, sans-serif" font-size="9" letter-spacing="1.5" fill="currentColor" opacity="0.6">IMMOBILIER · LE BOUSCAT</text>
-        </svg>
-      </a>
-      <div class="nav-actions">
-        <ul class="nav-links" id="nav-links" role="list">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#zones">Zones</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="tel:+33782423074" class="nav-cta">07 82 42 30 74</a></li>
-        </ul>
-        <button class="theme-toggle" data-theme-toggle aria-label="Changer de thème">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        Guillaume Berge
+        <small>Agent immobilier • Le Bouscat & Bordeaux Métropole</small>
       </div>
+      <nav aria-label="Navigation principale">
+        <a href="#services">Services</a>
+        <a href="#secteurs">Secteurs</a>
+        <a href="#adresse">Adresse</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- ── Main ── -->
-  <main id="main">
-
-    <!-- ── Hero ── -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container-wide">
-        <div class="hero-grid">
-          <div>
-            <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Agent Immobilier · Absolute Habitat</div>
-            <h1 class="hero-title" id="hero-title">
-              Vendre, acheter,<br>
-              <em>réussir</em> votre projet<br>
-              à Bordeaux & Le Bouscat
-            </h1>
-            <p class="hero-desc">
-              Guillaume Berge vous accompagne de l'estimation jusqu'à la signature chez le notaire. Spécialiste sur Le Bouscat, Bordeaux et Bordeaux Métropole.
-            </p>
-            <div class="hero-actions">
-              <a href="https://www.absolutehabitat.com/?utm_source=site&utm_medium=hero" class="btn-primary" target="_blank" rel="noopener noreferrer">
-                Estimation gratuite
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="tel:+33782423074" class="btn-outline">Appeler Guillaume</a>
-            </div>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="card hero-copy">
+          <div class="eyebrow">Estimation gratuite • Sans engagement</div>
+          <h1>Agent immobilier au Bouscat, à Bordeaux et sur Bordeaux Métropole</h1>
+          <p>
+            Guillaume Berge accompagne les projets de vente, d’achat et d’estimation immobilière avec une approche locale, claire et orientée résultat.
+          </p>
+          <p>
+            Cette page est optimisée pour la version actuellement publiée sur GitHub Pages, avec une structure SEO cohérente et des balises locales adaptées à l’URL réellement utilisée.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Demander une estimation</a>
+            <a class="btn btn-secondary" href="#adresse">Voir l’adresse</a>
           </div>
+        </article>
 
-          <!-- Carte profil -->
-          <div class="hero-card" role="complementary" aria-label="Profil de Guillaume Berge">
-            <div class="hero-card-badge">✨ Estimation offerte</div>
-            <div class="hero-card-avatar" aria-hidden="true">GB</div>
-            <h2 class="hero-card-name">Guillaume Berge</h2>
-            <p class="hero-card-role">Agent Immobilier · Absolute Habitat · Le Bouscat</p>
-            <div class="hero-card-stats" aria-label="Statistiques du profil Instagram">
-              <div class="hero-stat">
-                <div class="hero-stat-num">89</div>
-                <div class="hero-stat-label">Publications</div>
-              </div>
-              <div class="hero-stat">
-                <div class="hero-stat-num">248</div>
-                <div class="hero-stat-label">Abonnés</div>
-              </div>
-              <div class="hero-stat">
-                <div class="hero-stat-num">10+</div>
-                <div class="hero-stat-label">Zones</div>
-              </div>
-            </div>
-            <div class="hero-card-contact">
-              <div class="contact-item">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 011 1.18 2 2 0 012.98 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                <a href="tel:+33782423074">07.82.42.30.74</a>
-              </div>
-              <div class="contact-item">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <a href="mailto:g.berge@absolutehabitat.com">g.berge@absolutehabitat.com</a>
-              </div>
-              <div class="contact-item">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                <a href="https://www.instagram.com/guillaume.berge_immo/" target="_blank" rel="noopener noreferrer">@guillaume.berge_immo</a>
-              </div>
-            </div>
+        <aside class="card hero-side">
+          <div class="mini-panel">
+            <strong>Zone principale</strong>
+            <p>Le Bouscat, Bordeaux et les communes de Bordeaux Métropole.</p>
           </div>
-        </div>
+          <div class="mini-panel">
+            <strong>Accompagnement</strong>
+            <p>Vente, achat, estimation et accompagnement sur le marché immobilier local.</p>
+          </div>
+          <div class="mini-panel">
+            <strong>Version actuelle</strong>
+            <p>Site publié sur GitHub Pages avec URL canonique alignée sur l’hébergement réellement en ligne.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <hr class="divider">
-
-    <!-- ── Services ── -->
-    <section class="section" id="services" aria-labelledby="services-title">
+    <section class="section" id="services">
       <div class="container">
-        <p class="section-label">Ce que je propose</p>
-        <h2 class="section-title" id="services-title">Des services immobiliers<br>sur mesure à Bordeaux</h2>
-        <p class="section-desc">De l'estimation gratuite à la remise des clés, Guillaume Berge vous accompagne à chaque étape de votre projet immobilier sur Le Bouscat et Bordeaux Métropole.</p>
-        <div class="services-grid">
-          <article class="service-card">
-            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <h3 class="service-title">Estimation Gratuite</h3>
-            <p class="service-desc">Estimation gratuite et sans engagement de votre bien immobilier sur Le Bouscat, Bordeaux et Bordeaux Métropole. Une analyse précise du marché local.</p>
+        <div class="section-head">
+          <h2>Services immobiliers</h2>
+          <p>Un accompagnement local pour les vendeurs, acquéreurs et propriétaires souhaitant estimer leur bien.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card service">
+            <h3>Estimation immobilière</h3>
+            <p>Analyse de la valeur de votre bien au Bouscat, à Bordeaux ou sur la métropole, avec une lecture réaliste du marché local.</p>
           </article>
-          <article class="service-card">
-            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            <h3 class="service-title">Vente Immobilière</h3>
-            <p class="service-desc">Vente de maisons et appartements sur Le Bouscat, Bordeaux et la Gironde. Stratégie de vente, photos professionnelles, diffusion multi-supports.</p>
+          <article class="card service">
+            <h3>Vente de bien</h3>
+            <p>Mise en valeur, stratégie de commercialisation et accompagnement pour vendre dans de bonnes conditions.</p>
           </article>
-          <article class="service-card">
-            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-            <h3 class="service-title">Achat Immobilier</h3>
-            <p class="service-desc">Recherche personnalisée de biens, visites organisées, conseil et négociation jusqu'à la signature chez le notaire sur Le Bouscat et Bordeaux.</p>
+          <article class="card service">
+            <h3>Achat immobilier</h3>
+            <p>Recherche ciblée, conseils et accompagnement dans les étapes clés d’un projet d’acquisition.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ── CTA Estimation ── -->
-    <section class="cta-banner" aria-labelledby="cta-title">
+    <section class="section" id="secteurs">
       <div class="container">
-        <div class="cta-inner">
-          <div>
-            <h2 class="cta-title" id="cta-title">Estimation gratuite de votre bien</h2>
-            <p class="cta-desc">Sans engagement · Réponse rapide · Expert du marché local Le Bouscat & Bordeaux</p>
+        <div class="section-head">
+          <h2>Secteurs couverts</h2>
+          <p>Le contenu met en avant les zones à forte intention locale pour améliorer la pertinence SEO sur la zone de chalandise.</p>
+        </div>
+        <div class="card local-box">
+          <div class="split">
+            <div>
+              <h3>Le Bouscat</h3>
+              <p>Présence locale renforcée pour les recherches liées à l’estimation immobilière, à la vente et à l’achat sur Le Bouscat.</p>
+            </div>
+            <div>
+              <h3>Bordeaux Métropole</h3>
+              <p>Couverture élargie pour capter les recherches autour de Bordeaux et des communes proches selon les projets immobiliers.</p>
+            </div>
           </div>
-          <a href="https://www.absolutehabitat.com/?utm_source=site&utm_medium=cta" class="btn-gold" target="_blank" rel="noopener noreferrer">Demander une estimation</a>
         </div>
       </div>
     </section>
 
-    <!-- ── Zones d'intervention ── -->
-    <section class="section zones-section" id="zones" aria-labelledby="zones-title">
+    <section class="section" id="adresse">
       <div class="container">
-        <p class="section-label">Zones d'intervention</p>
-        <h2 class="section-title" id="zones-title">Agent immobilier sur toute<br>Bordeaux Métropole</h2>
-        <p class="section-desc">Guillaume Berge intervient sur l'ensemble de Bordeaux Métropole et la Gironde pour vos projets de vente et d'achat immobilier.</p>
-        <div class="zones-grid" role="list">
-          <span class="zone-tag zone-tag-primary" role="listitem"><span class="zone-dot"></span>Le Bouscat</span>
-          <span class="zone-tag zone-tag-primary" role="listitem"><span class="zone-dot"></span>Bordeaux</span>
-          <span class="zone-tag" role="listitem">Mérignac</span>
-          <span class="zone-tag" role="listitem">Pessac</span>
-          <span class="zone-tag" role="listitem">Eysines</span>
-          <span class="zone-tag" role="listitem">Bruges</span>
-          <span class="zone-tag" role="listitem">Caudéran</span>
-          <span class="zone-tag" role="listitem">Bordeaux Métropole</span>
-          <span class="zone-tag" role="listitem">Gironde (33)</span>
-          <span class="zone-tag" role="listitem">Nouvelle-Aquitaine</span>
+        <div class="section-head">
+          <h2>Adresse de référence</h2>
+          <p>Une adresse physique visible est essentielle pour le SEO local, notamment dans l’immobilier.</p>
+        </div>
+        <div class="card contact-box">
+          <p class="address">12 Place Gambetta, 33110 Le Bouscat, France</p>
+          <p class="note">
+            Vérifie impérativement que cette adresse correspond bien à l’adresse réelle à afficher publiquement avant publication définitive.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- ── Instagram ── -->
-    <section class="insta-section" id="instagram" aria-labelledby="insta-title">
+    <section class="section" id="faq">
       <div class="container">
-        <div class="insta-card">
-          <div class="insta-icon" aria-hidden="true">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-              <rect width="56" height="56" rx="14" fill="url(#ig-grad)"/>
-              <rect x="14" y="14" width="28" height="28" rx="7" stroke="white" stroke-width="2.2" fill="none"/>
-              <circle cx="28" cy="28" r="7" stroke="white" stroke-width="2.2"/>
-              <circle cx="37.5" cy="18.5" r="2" fill="white"/>
-              <defs>
-                <linearGradient id="ig-grad" x1="56" y1="0" x2="0" y2="56" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#f9ce34"/><stop offset="0.4" stop-color="#ee2a7b"/><stop offset="1" stop-color="#6228d7"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <div>
-            <h2 class="insta-title" id="insta-title">Suivez Guillaume Berge sur Instagram</h2>
-            <p class="insta-desc">Découvrez les biens disponibles, les actualités du marché immobilier bordelais et les conseils pour réussir votre projet sur Le Bouscat et Bordeaux.</p>
-            <a href="https://www.instagram.com/guillaume.berge_immo/" class="insta-handle" target="_blank" rel="noopener noreferrer">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              @guillaume.berge_immo
-            </a>
-          </div>
+        <div class="section-head">
+          <h2>Questions fréquentes</h2>
+          <p>Une FAQ locale claire aide les visiteurs et renforce la compréhension thématique de la page.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card faq-item">
+            <h3>Intervention géographique</h3>
+            <p>Guillaume Berge intervient au Bouscat, à Bordeaux et sur Bordeaux Métropole selon les besoins du projet immobilier.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Estimation gratuite</h3>
+            <p>Une estimation immobilière gratuite et sans engagement peut être proposée pour les propriétaires vendeurs.</p>
+          </article>
+          <article class="card faq-item">
+            <h3>Adresse affichée</h3>
+            <p>L’adresse visible sur le site doit être cohérente avec l’activité réelle pour soutenir le référencement local.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ── FAQ ── -->
-    <section class="section" id="faq" aria-labelledby="faq-title">
-      <div class="container-narrow">
-        <p class="section-label">Questions fréquentes</p>
-        <h2 class="section-title" id="faq-title">Tout savoir sur Guillaume Berge<br>agent immobilier Le Bouscat</h2>
-        <div class="faq-list" role="list">
-          <div class="faq-item" role="listitem">
-            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-              Comment contacter Guillaume Berge agent immobilier Le Bouscat ?
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-            </button>
-            <div class="faq-answer" aria-hidden="true">
-              <div class="faq-answer-inner">Via Instagram <a href="https://www.instagram.com/guillaume.berge_immo/" target="_blank" rel="noopener noreferrer">@guillaume.berge_immo</a> ou sur <a href="https://www.absolutehabitat.com/" target="_blank" rel="noopener noreferrer">absolutehabitat.com</a>. Tél&nbsp;: <a href="tel:+33782423074">07.82.42.30.74</a> – Email&nbsp;: <a href="mailto:g.berge@absolutehabitat.com">g.berge@absolutehabitat.com</a></div>
-            </div>
-          </div>
-          <div class="faq-item" role="listitem">
-            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-              Guillaume Berge propose-t-il des estimations gratuites ?
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-            </button>
-            <div class="faq-answer" aria-hidden="true">
-              <div class="faq-answer-inner">Oui, Guillaume Berge propose des estimations gratuites et sans engagement de biens immobiliers sur Le Bouscat, Bordeaux et Bordeaux Métropole. Contactez-le directement pour prendre rendez-vous.</div>
-            </div>
-          </div>
-          <div class="faq-item" role="listitem">
-            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-              Quelle est l'agence de Guillaume Berge ?
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-            </button>
-            <div class="faq-answer" aria-hidden="true">
-              <div class="faq-answer-inner">Guillaume Berge travaille pour <a href="https://www.absolutehabitat.com/" target="_blank" rel="noopener noreferrer">Absolute Habitat</a>, agence immobilière basée au Bouscat, spécialisée sur Bordeaux Métropole.</div>
-            </div>
-          </div>
-          <div class="faq-item" role="listitem">
-            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-              Dans quelles zones Guillaume Berge intervient-il ?
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-            </button>
-            <div class="faq-answer" aria-hidden="true">
-              <div class="faq-answer-inner">Guillaume Berge intervient sur Le Bouscat, Bordeaux, Mérignac, Pessac, Eysines, Bruges, Caudéran, l'ensemble de Bordeaux Métropole, la Gironde (33) et la Nouvelle-Aquitaine.</div>
-            </div>
-          </div>
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>Pour une estimation, un projet d’achat ou une mise en vente, la prise de contact doit rester simple et directe.</p>
+        </div>
+        <div class="card contact-box">
+          <p><strong>Guillaume Berge</strong></p>
+          <p>Agent immobilier au Bouscat & Bordeaux Métropole</p>
+          <p><a href="#adresse">Adresse de référence : Le Bouscat</a></p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- ── Footer ── -->
-  <footer class="footer" role="contentinfo">
-    <div class="container-wide">
-      <div class="footer-grid">
-        <div>
-          <p class="footer-brand-name">Guillaume Berge – Absolute Habitat</p>
-          <p class="footer-brand-desc">Agent immobilier spécialisé dans la vente et l'achat sur Le Bouscat, Bordeaux et Bordeaux Métropole. Estimation gratuite et sans engagement.</p>
-        </div>
-        <nav aria-label="Liens rapides">
-          <p class="footer-title">Liens rapides</p>
-          <ul class="footer-links" role="list">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#zones">Zones d'intervention</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="https://www.absolutehabitat.com/" target="_blank" rel="noopener noreferrer">Absolute Habitat</a></li>
-          </ul>
-        </nav>
-        <nav aria-label="Contact">
-          <p class="footer-title">Contact</p>
-          <ul class="footer-links" role="list">
-            <li><a href="tel:+33782423074">07.82.42.30.74</a></li>
-            <li><a href="mailto:g.berge@absolutehabitat.com">g.berge@absolutehabitat.com</a></li>
-            <li><a href="https://www.instagram.com/guillaume.berge_immo/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Guillaume Berge – Absolute Habitat · Agent Immobilier Le Bouscat & Bordeaux</p>
-        <p class="footer-copy">Le Bouscat · Bordeaux · Bordeaux Métropole · Gironde (33)</p>
+  <footer>
+    <div class="container">
+      <div class="card footer-box">
+        <p>
+          Version actuellement publiée sur GitHub Pages. Le balisage SEO, l’URL canonique et le sitemap doivent rester alignés sur cette URL tant qu’aucun domaine personnalisé n’est configuré.
+        </p>
+        <p>
+          Accès rapide : <a href="#services">Services</a> • <a href="#adresse">Adresse</a> • <a href="#faq">FAQ</a> • <a href="#contact">Contact</a>
+        </p>
       </div>
     </div>
   </footer>
-
-  <script>
-    // Thème
-    (function(){
-      const t = document.querySelector('[data-theme-toggle]');
-      const r = document.documentElement;
-      let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
-      r.setAttribute('data-theme', d);
-      if(t) t.addEventListener('click', () => {
-        d = d === 'dark' ? 'light' : 'dark';
-        r.setAttribute('data-theme', d);
-        t.setAttribute('aria-label', 'Passer en mode ' + (d === 'dark' ? 'clair' : 'sombre'));
-        t.innerHTML = d === 'dark'
-          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-      });
-    })();
-
-    // Menu hamburger
-    const ham = document.getElementById('hamburger');
-    const nav = document.getElementById('nav-links');
-    if(ham && nav) {
-      ham.addEventListener('click', () => {
-        const open = nav.classList.toggle('open');
-        ham.setAttribute('aria-expanded', open);
-      });
-    }
-
-    // FAQ accordion
-    function toggleFaq(btn) {
-      const item = btn.closest('.faq-item');
-      const answer = item.querySelector('.faq-answer');
-      const isOpen = item.classList.contains('open');
-      // Fermer tous
-      document.querySelectorAll('.faq-item.open').forEach(el => {
-        el.classList.remove('open');
-        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        el.querySelector('.faq-answer').setAttribute('aria-hidden', 'true');
-      });
-      if(!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        answer.setAttribute('aria-hidden', 'false');
-      }
-    }
-  </script>
 </body>
 </html>
