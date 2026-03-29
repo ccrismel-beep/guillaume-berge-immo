@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://ccrismel-beep.github.io/guillaume-berge-immo/sitemap.xml
