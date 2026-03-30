@@ -217,7 +217,7 @@ def generer_html():
         <span class="tag">Gironde</span>
         <span class="tag">Nouvelle-Aquitaine</span>
         <span class="tag">Bruges</span>
-        <span class="tag">Caudéan</span>
+        <span class="tag">Caudéran</span>
       </div>
     </div>
 
