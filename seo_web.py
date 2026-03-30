@@ -199,7 +199,7 @@ def generer_html():
         </div>
         <div class="item">
           <h3>Conseil Immobilier</h3>
-          <p>Conseil et accompagnement complet pour réussir votre projet immobilier a Bordeaux.</p>
+          <p>Conseil et accompagnement complet pour réussir votre projet immobilier à Bordeaux.</p>
         </div>
       </div>
     </div>
