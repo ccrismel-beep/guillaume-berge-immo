@@ -224,10 +224,10 @@ def generer_html():
     <div class="card">
       <h2>Questions Frequentes</h2>
       <h3>Comment contacter Guillaume Berge agent immobilier Le Bouscat ?</h3>
-      <p>Via Instagram <a href="{INSTA_URL}" target="_blank" rel="noopener noreferrer">@guillaume.berge_immo</a> ou sur <a href="{SITE_URL}" target="_blank" rel="noopener noreferrer">absolutehabitat.com</a>.</p>
-
+      <p>Via Instagram <a href="{INSTA_URL}" target="_blank" rel="noopener noreferrer">@guillaume.berge_immo</a> ou sur <a href="{SITE_URL}" target="_blank" rel="noopener noreferrer">absolutehabitat.com</a><br>
+      <br>Email <a href="mailto:g.berge@absolutehabitat.com">g.berge@absolutehabitat.com</a> et téléphone <a href="tel:+33782423047">07.82.42.30.47</a></p>
       <h3 style="margin-top:20px">Guillaume Berge propose-t-il des estimations gratuites ?</h3>
-      <p>Oui, Guillaume Berge propose des <strong>estimations gratuites</strong> de biens immobiliers a Le Bouscat, Bordeaux et Bordeaux Metropole.</p>
+      <p>Oui, Guillaume Berge propose des <strong>estimations gratuites</strong> de biens immobiliers sur Le Bouscat, Bordeaux et Bordeaux Metropole.</p>
 
       <h3 style="margin-top:20px">Quelle est l'agence de Guillaume Berge ?</h3>
       <p>Guillaume Berge travaille pour <strong>{AGENCE}</strong>, agence immobiliere active sur Le Bouscat et Bordeaux Metropole.</p>
