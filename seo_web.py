@@ -178,7 +178,7 @@ def generer_html():
   <div class="container">
     <div class="card">
       <h2>{NOM} - Agent Immobilier Le Bouscat &amp; Bordeaux</h2>
-      <p><strong>{NOM}</strong> est agent immobilier spécialisé dans la vente et l'achat de biens immobiliers a <strong>Le Bouscat</strong>, <strong>Bordeaux</strong> et toute la <strong>Bordeaux Métropole</strong>. Membre de l'agence <strong>{AGENCE}</strong>, il vous accompagne de l'estimation jusqu'à la signature chez le notaire.</p>
+      <p><strong>{NOM}</strong> est agent immobilier spécialisé dans la vente et l'achat de biens immobiliers au <strong>Bouscat</strong>, <strong>Bordeaux</strong> et tout <strong>Bordeaux Métropole</strong>. Membre de l'agence <strong>{AGENCE}</strong>, il vous accompagne de l'estimation jusqu'à la signature chez le notaire.</p>
       <p style="margin-top:15px">Instagram : <a href="{INSTA_URL}" target="_blank" rel="noopener noreferrer" style="color:#0f3460;font-weight:700">@guillaume.berge_immo</a></p>
     </div>
 
