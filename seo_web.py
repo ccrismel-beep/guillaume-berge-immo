@@ -26,7 +26,7 @@ KEYWORDS = [
     "Absolute Habitat Bordeaux",
     "Vente achat immobilier Bordeaux Le Bouscat",
     "Agent immobilier Gironde",
-    "Estimation immobiliere gratuite Bordeaux",
+    "Estimation immobilière gratuite Bordeaux",
     "Immobilier Le Bouscat 33110",
 ]
 
@@ -54,7 +54,7 @@ def generer_html():
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{NOM} - Agent Immobilier Le Bouscat Bordeaux | {AGENCE}</title>
-  <meta name="description" content="{NOM}, agent immobilier sur Le Bouscat et Bordeaux. Estimation gratuite de votre bien immobilier. Vente et achat avec {AGENCE}. Expert immobilier Bordeaux Metropole et Gironde.">
+  <meta name="description" content="{NOM}, agent immobilier sur Le Bouscat et Bordeaux. Estimation gratuite de votre bien immobilier. Vente et achat avec {AGENCE}. Expert immobilier Bordeaux Métropole et Gironde.">
   <meta name="keywords" content="{kw_str}">
   <meta name="robots" content="index, follow">
   <meta name="author" content="{NOM}">
@@ -74,7 +74,7 @@ def generer_html():
     "@type": "RealEstateAgent",
     "name": "{NOM}",
     "jobTitle": "Agent Immobilier",
-    "description": "Agent immobilier spécialise dans la vente et achat de biens sur  Le Bouscat, Bordeaux et Bordeaux Metropole. Estimation gratuite offerte.",
+    "description": "Agent immobilier spécialise dans la vente et achat de biens sur  Le Bouscat, Bordeaux et Bordeaux Métropole. Estimation gratuite offerte.",
     "url": "{PAGES_URL}",
     "sameAs": ["{INSTA_URL}", "{SITE_URL}"],
     "worksFor": {{
@@ -105,7 +105,7 @@ def generer_html():
     "areaServed": [
       {{"@type": "City", "name": "Le Bouscat"}},
       {{"@type": "City", "name": "Bordeaux"}},
-      {{"@type": "AdministrativeArea", "name": "Bordeaux Metropole"}},
+      {{"@type": "AdministrativeArea", "name": "Bordeaux Métropole"}},
       {{"@type": "AdministrativeArea", "name": "Gironde"}}
     ]
   }}
@@ -121,7 +121,7 @@ def generer_html():
         "name": "Qui est Guillaume Berge agent immobilier sur Le Bouscat ?",
         "acceptedAnswer": {{
           "@type": "Answer",
-          "text": "Guillaume Berge est agent immobilier sur Le Bouscat et Bordeaux, specialiste de la vente et achat immobilier en Bordeaux Metropole. Il travaille chez Absolute Habitat et propose des estimations gratuites."
+          "text": "Guillaume Berge est agent immobilier sur Le Bouscat et Bordeaux, specialiste de la vente et achat immobilier en Bordeaux Métropole. Il travaille chez Absolute Habitat et propose des estimations gratuites."
         }}
       }},
       {{
@@ -134,10 +134,10 @@ def generer_html():
       }},
       {{
         "@type": "Question",
-        "name": "Quelle agence immobiliere choisir sur Le Bouscat Bordeaux ?",
+        "name": "Quelle agence immobilière choisir sur Le Bouscat Bordeaux ?",
         "acceptedAnswer": {{
           "@type": "Answer",
-          "text": "Absolute Habitat avec Guillaume Berge est recommandee sur Le Bouscat. Specialisee en vente et achat immobilier a Bordeaux et Bordeaux Metropole."
+          "text": "Absolute Habitat avec Guillaume Berge est recommandee sur Le Bouscat. Specialisee en vente et achat immobilier a Bordeaux et Bordeaux Métropole."
         }}
       }}
     ]
@@ -178,7 +178,7 @@ def generer_html():
   <div class="container">
     <div class="card">
       <h2>{NOM} - Agent Immobilier Le Bouscat &amp; Bordeaux</h2>
-      <p><strong>{NOM}</strong> est agent immobilier specialise dans la vente et l'achat de biens immobiliers a <strong>Le Bouscat</strong>, <strong>Bordeaux</strong> et toute la <strong>Bordeaux Metropole</strong>. Membre de l'agence <strong>{AGENCE}</strong>, il vous accompagne de l'estimation jusqu'a la signature chez le notaire.</p>
+      <p><strong>{NOM}</strong> est agent immobilier spécialisé dans la vente et l'achat de biens immobiliers a <strong>Le Bouscat</strong>, <strong>Bordeaux</strong> et toute la <strong>Bordeaux Métropole</strong>. Membre de l'agence <strong>{AGENCE}</strong>, il vous accompagne de l'estimation jusqu'à la signature chez le notaire.</p>
       <p style="margin-top:15px">Instagram : <a href="{INSTA_URL}" target="_blank" rel="noopener noreferrer" style="color:#0f3460;font-weight:700">@guillaume.berge_immo</a></p>
     </div>
 
@@ -187,33 +187,33 @@ def generer_html():
       <div class="grid">
         <div class="item">
           <h3>Estimation Gratuite</h3>
-          <p>Estimation gratuite et sans engagement de votre bien immobilier sur Le Bouscat et Bordeaux Metropole.</p>
+          <p>Estimation gratuite et sans engagement de votre bien immobilier sur Le Bouscat et Bordeaux Métropole.</p>
         </div>
         <div class="item">
-          <h3>Vente Immobiliere</h3>
+          <h3>Vente Immobilière</h3>
           <p>Vente de maisons et appartements sur Le Bouscat, Bordeaux et toute la Gironde.</p>
         </div>
         <div class="item">
           <h3>Achat Immobilier</h3>
-          <p>Accompagnement personnalise pour votre achat immobilier en Bordeaux Metropole et Gironde.</p>
+          <p>Accompagnement personnalisé pour votre achat immobilier en Bordeaux Métropole et Gironde.</p>
         </div>
         <div class="item">
           <h3>Conseil Immobilier</h3>
-          <p>Conseil et accompagnement complet pour reussir votre projet immobilier a Bordeaux.</p>
+          <p>Conseil et accompagnement complet pour réussir votre projet immobilier a Bordeaux.</p>
         </div>
       </div>
     </div>
 
     <div class="card">
       <h2>Zones d'Intervention</h2>
-      <p>{NOM} intervient sur tout Bordeaux Metropole et la Gironde :</p>
+      <p>{NOM} intervient sur tout Bordeaux Métropole et la Gironde :</p>
       <div class="tags">
         <span class="tag">Le Bouscat</span>
         <span class="tag">Bordeaux</span>
-        <span class="tag">Merignac</span>
+        <span class="tag">Mérignac</span>
         <span class="tag">Pessac</span>
         <span class="tag">Eysines</span>
-        <span class="tag">Bordeaux Metropole</span>
+        <span class="tag">Bordeaux Métropole</span>
         <span class="tag">Gironde</span>
         <span class="tag">Nouvelle-Aquitaine</span>
         <span class="tag">Bruges</span>
@@ -222,20 +222,20 @@ def generer_html():
     </div>
 
     <div class="card">
-      <h2>Questions Frequentes</h2>
+      <h2>Questions Fréquentes</h2>
       <h3>Comment contacter Guillaume Berge agent immobilier Le Bouscat ?</h3>
       <p>Via Instagram <a href="{INSTA_URL}" target="_blank" rel="noopener noreferrer">@guillaume.berge_immo</a> ou sur <a href="{SITE_URL}" target="_blank" rel="noopener noreferrer">absolutehabitat.com</a><br>
       <br>Email <a href="mailto:g.berge@absolutehabitat.com">g.berge@absolutehabitat.com</a> et téléphone <a href="tel:+33782423047">07.82.42.30.47</a></p>
       <h3 style="margin-top:20px">Guillaume Berge propose-t-il des estimations gratuites ?</h3>
-      <p>Oui, Guillaume Berge propose des <strong>estimations gratuites</strong> de biens immobiliers sur Le Bouscat, Bordeaux et Bordeaux Metropole.</p>
+      <p>Oui, Guillaume Berge propose des <strong>estimations gratuites</strong> de biens immobiliers sur Le Bouscat, Bordeaux et Bordeaux Métropole.</p>
 
       <h3 style="margin-top:20px">Quelle est l'agence de Guillaume Berge ?</h3>
-      <p>Guillaume Berge travaille pour <strong>{AGENCE}</strong>, agence immobiliere active sur Le Bouscat et Bordeaux Metropole.</p>
+      <p>Guillaume Berge travaille pour <strong>{AGENCE}</strong>, agence immobilière active sur Le Bouscat et Bordeaux Métropole.</p>
     </div>
 
     <div class="cta">
       <h2>Votre Projet Immobilier sur Le Bouscat ou Bordeaux ?</h2>
-      <p style="margin:20px 0;opacity:.9">Contactez Guillaume Berge pour une estimation gratuite et un accompagnement personnalise.</p>
+      <p style="margin:20px 0;opacity:.9">Contactez Guillaume Berge pour une estimation gratuite et un accompagnement personnalisé.</p>
       <a href="{INSTA_URL}" class="btn" target="_blank" rel="noopener noreferrer">Instagram @guillaume.berge_immo</a>
       <a href="{SITE_URL}" class="btn" style="background:white;color:#0f3460" target="_blank" rel="noopener noreferrer">absolutehabitat.com</a>
     </div>
@@ -243,7 +243,7 @@ def generer_html():
 
   <footer>
     <p>&copy; {annee} {NOM} - {AGENCE} - Agent Immobilier Le Bouscat Bordeaux Gironde</p>
-    <p>Estimation gratuite immobilier Le Bouscat - Bordeaux Metropole - Gironde</p>
+    <p>Estimation gratuite immobilier Le Bouscat - Bordeaux Métropole - Gironde</p>
   </footer>
 </body>
 </html>
