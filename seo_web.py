@@ -54,7 +54,7 @@ def generer_html():
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{NOM} - Agent Immobilier Le Bouscat Bordeaux | {AGENCE}</title>
-  <meta name="description" content="{NOM}, agent immobilier a Le Bouscat et Bordeaux. Estimation gratuite de votre bien immobilier. Vente et achat avec {AGENCE}. Expert immobilier Bordeaux Metropole et Gironde.">
+  <meta name="description" content="{NOM}, agent immobilier sur Le Bouscat et Bordeaux. Estimation gratuite de votre bien immobilier. Vente et achat avec {AGENCE}. Expert immobilier Bordeaux Metropole et Gironde.">
   <meta name="keywords" content="{kw_str}">
   <meta name="robots" content="index, follow">
   <meta name="author" content="{NOM}">
@@ -74,7 +74,7 @@ def generer_html():
     "@type": "RealEstateAgent",
     "name": "{NOM}",
     "jobTitle": "Agent Immobilier",
-    "description": "Agent immobilier specialise dans la vente et achat de biens a Le Bouscat, Bordeaux et Bordeaux Metropole. Estimation gratuite offerte.",
+    "description": "Agent immobilier spécialise dans la vente et achat de biens sur  Le Bouscat, Bordeaux et Bordeaux Metropole. Estimation gratuite offerte.",
     "url": "{PAGES_URL}",
     "sameAs": ["{INSTA_URL}", "{SITE_URL}"],
     "worksFor": {{
@@ -118,26 +118,26 @@ def generer_html():
     "mainEntity": [
       {{
         "@type": "Question",
-        "name": "Qui est Guillaume Berge agent immobilier a Le Bouscat ?",
+        "name": "Qui est Guillaume Berge agent immobilier sur Le Bouscat ?",
         "acceptedAnswer": {{
           "@type": "Answer",
-          "text": "Guillaume Berge est agent immobilier a Le Bouscat et Bordeaux, specialiste de la vente et achat immobilier en Bordeaux Metropole. Il travaille chez Absolute Habitat et propose des estimations gratuites."
+          "text": "Guillaume Berge est agent immobilier sur Le Bouscat et Bordeaux, specialiste de la vente et achat immobilier en Bordeaux Metropole. Il travaille chez Absolute Habitat et propose des estimations gratuites."
         }}
       }},
       {{
         "@type": "Question",
-        "name": "Comment obtenir une estimation gratuite a Le Bouscat ?",
+        "name": "Comment obtenir une estimation gratuite sur Le Bouscat ?",
         "acceptedAnswer": {{
           "@type": "Answer",
-          "text": "Guillaume Berge propose des estimations gratuites a Le Bouscat et Bordeaux. Contactez-le via Instagram @guillaume.berge_immo ou sur absolutehabitat.com."
+          "text": "Guillaume Berge propose des estimations gratuites sur Le Bouscat et Bordeaux. Contactez-le via Instagram @guillaume.berge_immo ou sur absolutehabitat.com."
         }}
       }},
       {{
         "@type": "Question",
-        "name": "Quelle agence immobiliere choisir a Le Bouscat Bordeaux ?",
+        "name": "Quelle agence immobiliere choisir sur Le Bouscat Bordeaux ?",
         "acceptedAnswer": {{
           "@type": "Answer",
-          "text": "Absolute Habitat avec Guillaume Berge est recommandee a Le Bouscat. Specialisee en vente et achat immobilier a Bordeaux et Bordeaux Metropole."
+          "text": "Absolute Habitat avec Guillaume Berge est recommandee sur Le Bouscat. Specialisee en vente et achat immobilier a Bordeaux et Bordeaux Metropole."
         }}
       }}
     ]
@@ -187,11 +187,11 @@ def generer_html():
       <div class="grid">
         <div class="item">
           <h3>Estimation Gratuite</h3>
-          <p>Estimation gratuite et sans engagement de votre bien immobilier a Le Bouscat et Bordeaux Metropole.</p>
+          <p>Estimation gratuite et sans engagement de votre bien immobilier sur Le Bouscat et Bordeaux Metropole.</p>
         </div>
         <div class="item">
           <h3>Vente Immobiliere</h3>
-          <p>Vente de maisons et appartements a Le Bouscat, Bordeaux et toute la Gironde.</p>
+          <p>Vente de maisons et appartements sur Le Bouscat, Bordeaux et toute la Gironde.</p>
         </div>
         <div class="item">
           <h3>Achat Immobilier</h3>
@@ -206,16 +206,18 @@ def generer_html():
 
     <div class="card">
       <h2>Zones d'Intervention</h2>
-      <p>{NOM} intervient sur toute la Bordeaux Metropole et la Gironde :</p>
+      <p>{NOM} intervient sur tout Bordeaux Metropole et la Gironde :</p>
       <div class="tags">
         <span class="tag">Le Bouscat</span>
         <span class="tag">Bordeaux</span>
         <span class="tag">Merignac</span>
         <span class="tag">Pessac</span>
-        <span class="tag">Talence</span>
+        <span class="tag">Eysines</span>
         <span class="tag">Bordeaux Metropole</span>
         <span class="tag">Gironde</span>
         <span class="tag">Nouvelle-Aquitaine</span>
+        <span class="tag">Bruges</span>
+        <span class="tag">Caudéra</span>
       </div>
     </div>
 
