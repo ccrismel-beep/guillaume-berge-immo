@@ -234,7 +234,7 @@ def generer_html():
     </div>
 
     <div class="cta">
-      <h2>Votre Projet Immobilier a Le Bouscat ou Bordeaux ?</h2>
+      <h2>Votre Projet Immobilier sur Le Bouscat ou Bordeaux ?</h2>
       <p style="margin:20px 0;opacity:.9">Contactez Guillaume Berge pour une estimation gratuite et un accompagnement personnalise.</p>
       <a href="{INSTA_URL}" class="btn" target="_blank" rel="noopener noreferrer">Instagram @guillaume.berge_immo</a>
       <a href="{SITE_URL}" class="btn" style="background:white;color:#0f3460" target="_blank" rel="noopener noreferrer">absolutehabitat.com</a>
