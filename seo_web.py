@@ -49,6 +49,7 @@ def sep(title):
 def generer_html():
     sep("MODULE 1 - GENERATION PAGE HTML SEO")
     annee = datetime.date.today().year
+    date_modif = datetime.date.today().isoformat()
     kw_str = ", ".join(KEYWORDS)
     html = f"""<!DOCTYPE html>
 <html lang="fr">
@@ -69,7 +70,19 @@ def generer_html():
   {{
     "@context": "https://schema.org",
     "@graph": [
-      {{
+     "@type": "WebPage",
+"@id": "{PAGES_URL}#webpage",
+"url": "{PAGES_URL}",
+"name": "Guillaume Berge - Agent Immobilier Le Bouscat & Bordeaux",
+"datePublished": "2026-04-09",
+"dateModified": "{date_modif}",
+"about": {{"@id": "{PAGES_URL}#guillaume-berge"}},
+"isPartOf": {{
+"@type": "WebSite",
+"url": "{PAGES_URL}",
+"name": "{NOM} - {AGENCE}"
+}}
+}}, {{
         "@type": "Person",
         "@id": "{PAGES_URL}#guillaume-berge",
         "name": "{NOM}",
@@ -254,6 +267,10 @@ def generer_html():
 
   <div class="card">
     <h2>Guillaume Berge - Agent Immobilier Le Bouscat &amp; Bordeaux</h2>
+    <p class="direct-answer" itemprop="description">
+    {NOM} est agent immobilier chez {AGENCE}, basé au Bouscat (33110), spécialisé dans l'estimation gratuite,
+    la vente et l'achat immobilier sur Bordeaux Métropole. Contact : {TEL}.
+    </p>
     <div class="trust">✅ Expert immobilier local &mdash; Plus de 5 ans d'expérience sur le secteur du Bouscat et Bordeaux Métropole &mdash; Connaissance approfondie du marché immobilier girondin</div>
     <p><strong>{NOM}</strong> est agent immobilier spécialisé dans la vente et l'achat de biens immobiliers au <strong>Bouscat</strong>, <strong>Bordeaux</strong> et tout <strong>Bordeaux Métropole</strong>. Membre de l'agence <strong>{AGENCE}</strong>, il vous accompagne de l'estimation jusqu'à la signature chez le notaire.</p>
     <p style="margin-top:15px">📞 <a href="tel:+33782423047">{TEL}</a> &nbsp;|&nbsp; ✉️ <a href="mailto:{EMAIL}">{EMAIL}</a> &nbsp;|&nbsp; Instagram : <a href="{INSTA_URL}">@guillaume.berge_immo</a></p>
