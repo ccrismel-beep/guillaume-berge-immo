@@ -60,7 +60,6 @@ def generer_html():
   <meta name="description" content="Guillaume Berge, agent immobilier Absolute Habitat au Bouscat (33110). Estimation gratuite, vente et achat immobilier Bordeaux Métropole. 📞 07.82.42.30.47">
   <meta name="keywords" content="{kw_str}">
   <meta name="robots" content="index, follow">
-  >
   <meta property="og:title" content="Guillaume Berge - Agent Immobilier Le Bouscat & Bordeaux">
   <meta property="og:description" content="Estimation gratuite, vente et achat immobilier sur Le Bouscat et Bordeaux Métropole. Contactez Guillaume Berge – Absolute Habitat.">
   <meta property="og:url" content="{PAGES_URL}">
