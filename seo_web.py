@@ -66,24 +66,26 @@ def generer_html():
   <meta property="og:url" content="{PAGES_URL}">
   <meta property="og:type" content="website">
 
-  <script type="application/ld+json">
-  {{
-    "@context": "https://schema.org",
-    "@graph": [
-     "@type": "WebPage",
-"@id": "{PAGES_URL}#webpage",
-"url": "{PAGES_URL}",
-"name": "Guillaume Berge - Agent Immobilier Le Bouscat & Bordeaux",
-"datePublished": "2026-04-09",
-"dateModified": "{date_modif}",
-"about": {{"@id": "{PAGES_URL}#guillaume-berge"}},
-"isPartOf": {{
-"@type": "WebSite",
-"url": "{PAGES_URL}",
-"name": "{NOM} - {AGENCE}"
-}}
-}}, {{
-        "@type": "Person",
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@graph": [
+    {{
+      "@type": "WebPage",
+      "@id": "{PAGES_URL}#webpage",
+      "url": "{PAGES_URL}",
+      "name": "Guillaume Berge - Agent Immobilier Le Bouscat & Bordeaux",
+      "datePublished": "2026-04-09",
+      "dateModified": "{date_modif}",
+      "about": {{"@id": "{PAGES_URL}#guillaume-berge"}},
+      "isPartOf": {{
+        "@type": "WebSite",
+        "url": "{PAGES_URL}",
+        "name": "{NOM} - {AGENCE}"
+      }}
+    }},
+    {{
+      "@type": "Person",
         "@id": "{PAGES_URL}#guillaume-berge",
         "name": "{NOM}",
         "jobTitle": "Agent Immobilier",
