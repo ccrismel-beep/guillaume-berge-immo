@@ -272,7 +272,7 @@ def generer_html():
     {NOM} est agent immobilier chez {AGENCE}, basé au Bouscat (33110), spécialisé dans l'estimation gratuite,
     la vente et l'achat immobilier sur Bordeaux Métropole. Contact : {TEL}.
     </p>
-    <div class="trust">✅ Expert immobilier local &mdash; Plus de 5 ans d'expérience sur le secteur du Bouscat et Bordeaux Métropole &mdash; Connaissance approfondie du marché immobilier girondin</div>
+    <div class="trust">✅ Expert immobilier local &mdash; Plus de 20 ans d'expérience sur le secteur du Bouscat et Bordeaux Métropole &mdash; Connaissance approfondie du marché immobilier girondin</div>
     <p><strong>{NOM}</strong> est agent immobilier spécialisé dans la vente et l'achat de biens immobiliers au <strong>Bouscat</strong>, <strong>Bordeaux</strong> et tout <strong>Bordeaux Métropole</strong>. Membre de l'agence <strong>{AGENCE}</strong>, il vous accompagne de l'estimation jusqu'à la signature chez le notaire.</p>
     <p style="margin-top:15px">📞 <a href="tel:+33782423047">{TEL}</a> &nbsp;|&nbsp; ✉️ <a href="mailto:{EMAIL}">{EMAIL}</a> &nbsp;|&nbsp; Instagram : <a href="{INSTA_URL}">@guillaume.berge_immo</a></p>
   </div>
